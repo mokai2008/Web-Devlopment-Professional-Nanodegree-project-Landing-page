@@ -47,7 +47,7 @@ function addNavs() {
         const li = document.createElement('li');
         
         li.innerHTML = `
-            <a class="menu__link" href="#${section.id}">${section.dataset.nav}</a>
+            <a class="menu__link" data-scroll = "${section.id}">${section.dataset.nav}</a>
         `;
 
         navFragment.appendChild(li);
@@ -63,6 +63,26 @@ function addNavs() {
 
 // Scroll to anchor ID using scrollTO event
 
+function addScrollEvent() {
+    
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+
+            // Get the target section position
+
+            const section = document.getElementById(`${this.dataset.scroll}`)
+            
+            window.scrollTo({
+                top: section.offsetTop,
+                left: 0,
+                behavior: 'smooth'
+            });
+            
+        })
+    })
+}
+
 
 /**
  * End Main Functions
@@ -71,10 +91,12 @@ function addNavs() {
 */
 
 // Build menu 
-window.addEventListener('DOMContentLoaded', function() {
-    addNavs();
-})
+
+addNavs();
+
 // Scroll to section on link click
+
+addScrollEvent();
 
 // Set sections as active
 
