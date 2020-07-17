@@ -19,8 +19,9 @@
 */
 const navList = document.getElementById('navbar__list');
 
-const sections = document.getElementsByTagName('section');
+const sections = Array.from(document.getElementsByTagName('section'));
 
+const navFragment = document.createDocumentFragment();
 
 /**
  * End Global Variables
@@ -28,7 +29,25 @@ const sections = document.getElementsByTagName('section');
  * 
 */
 
+function addNavs() {
+    
+    sections.forEach(section => {
+        
+        const li = document.createElement('li');
+        
+        li.innerHTML = `
+            <a class="menu__link">${section.dataset.nav}</a>
+        `;
 
+        navFragment.appendChild(li);
+    });
+
+    
+
+    navList.appendChild(navFragment);
+}
+
+addNavs();
 
 /**
  * End Helper Functions
