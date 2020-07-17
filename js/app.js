@@ -60,15 +60,32 @@ function addNavs() {
 
 // Add class 'active' to section when near top of viewport
 
+function addCLassActive() {
+    const links = document.querySelectorAll('a');
+
+    
+
+window.addEventListener('scroll', function() {
+    sections.forEach(section => {
+        links.forEach(link => {
+            if(link.dataset.scroll === section.id) {
+                if(this.scrollY >= section.offsetTop && this.scrollY < (section.offsetTop + section.offsetHeight)){
+                        link.classList.add('active')
+                        console.log(this.scrollY, section.offsetTop, section.offsetTop+section.offsetHeight)
+    } else {
+        link.classList.remove('active');
+    }
+}})})})}
 
 // Scroll to anchor ID using scrollTO event
 
 function addScrollEvent() {
-    
+
     const links = document.querySelectorAll('a');
     links.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(e) {
 
+            e.preventDefault();
             // Get the target section position
 
             const section = document.getElementById(`${this.dataset.scroll}`)
@@ -100,4 +117,4 @@ addScrollEvent();
 
 // Set sections as active
 
-
+addCLassActive();
