@@ -29,25 +29,8 @@ const navFragment = document.createDocumentFragment();
  * 
 */
 
-function addNavs() {
-    
-    sections.forEach(section => {
-        
-        const li = document.createElement('li');
-        
-        li.innerHTML = `
-            <a class="menu__link">${section.dataset.nav}</a>
-        `;
 
-        navFragment.appendChild(li);
-    });
 
-    
-
-    navList.appendChild(navFragment);
-}
-
-addNavs();
 
 /**
  * End Helper Functions
@@ -57,6 +40,23 @@ addNavs();
 
 // build the nav
 
+function addNavs() {
+
+    sections.forEach(section => {
+        
+        const li = document.createElement('li');
+        
+        li.innerHTML = `
+            <a class="menu__link" href="#${section.id}">${section.dataset.nav}</a>
+        `;
+
+        navFragment.appendChild(li);
+    });
+
+    
+
+    navList.appendChild(navFragment);
+}
 
 // Add class 'active' to section when near top of viewport
 
@@ -71,7 +71,9 @@ addNavs();
 */
 
 // Build menu 
-
+window.addEventListener('DOMContentLoaded', function() {
+    addNavs();
+})
 // Scroll to section on link click
 
 // Set sections as active
