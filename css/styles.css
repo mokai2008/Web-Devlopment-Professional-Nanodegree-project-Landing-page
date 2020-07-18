@@ -225,6 +225,7 @@ section.your-active-class .landing__container::after {
 }
 
 #backTop {
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
