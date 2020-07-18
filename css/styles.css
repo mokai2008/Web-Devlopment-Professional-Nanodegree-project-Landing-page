@@ -224,6 +224,8 @@ section.your-active-class .landing__container::after {
 	}
 }
 
+/* Back to top styling */
+
 #backTop {
     display: none;
     position: fixed;

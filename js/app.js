@@ -25,6 +25,7 @@ const navFragment = document.createDocumentFragment();
 
 const backTop = document.getElementById('backTop');
 
+
 /**
  * End Global Variables
  * Start Helper Functions
