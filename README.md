@@ -1,13 +1,10 @@
 # Landing Page Project
 
-## Table of Contents
+Landing Page project is a part of Web Development Professional Nanodegree. The purpose of it is demonstrating how use html, css and vanilla javascript to build a landing page
 
-* [Instructions](#instructions)
+## Installation
 
-## Instructions
+download the zip folder or use git clone (link of this repo)
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
-
-To get started, open `js/app.js` and start building out the app's functionality
-
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+## Contents
+index.html, styles.css and app.js
