@@ -23,13 +23,32 @@ const sections = Array.from(document.getElementsByTagName('section'));
 
 const navFragment = document.createDocumentFragment();
 
+const backTop = document.getElementById('backTop');
+
 /**
  * End Global Variables
  * Start Helper Functions
  * 
 */
 
+// Showing the back to top button when scrolling
 
+function showBackTop() {
+    window.addEventListener('scroll', function () {
+        if(this.scrollY > 400) {
+            backTop.style.display = 'block';
+            backTop.addEventListener('click', () => {
+                this.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth"
+                });
+            })
+        } else {
+            backTop.style.display = 'none';
+        }
+    })
+}
 
 
 /**
@@ -118,3 +137,7 @@ addScrollEvent();
 // Set sections as active
 
 addCLassActive();
+
+// Showing and listen to Back to Top Button
+
+showBackTop();
